@@ -1,0 +1,13 @@
+<svg width="50" height="9" viewBox="0 0 50 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g mask="url(#path8-mask)">
+    <path id="Vector 32"
+      d="M48.5 7.5L44.8702 2.78128C44.0193 1.67508 42.6533 1.09236 41.2659 1.24372L16.6133 3.93309C16.2068 3.97744 15.796 3.9592 15.395 3.87901L1 1"
+      stroke="#304143" stroke-width="2" />
+  </g>
+
+  <mask id="path8-mask" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="9">
+    <path id="Vector 32"
+      d="M48.5 7.5L44.8702 2.78128C44.0193 1.67508 42.6533 1.09236 41.2659 1.24372L16.6133 3.93309C16.2068 3.97744 15.796 3.9592 15.395 3.87901L1 1"
+      stroke="#304143" stroke-width="2" stroke-dasharray="4 4" />
+  </mask>
+</svg>

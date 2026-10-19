@@ -1,0 +1,2014 @@
+{
+  "villas": {
+    "pageData": {
+      "meta": {
+        "title": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "description": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "keywords": "development model, development model, development model, ",
+        "ogTitle": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "ogDescription": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "ogImage": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "ogImageAlt": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "ogImageUrl": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "ogSiteName": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterTitle": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterDescription": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "twitterImage": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "twitterImageAlt": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterCard": "summary_large_image"
+      },
+      "promos": [
+        {
+          "title": "Horizonte Event",
+          "description": "Our event to celebrate the opening of the launch of the sale",
+          "image": {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "small": "https://cdn.horizonte-village.com/small_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "large": "https://cdn.horizonte-village.com/large_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "original": "https://cdn.horizonte-village.com/IMG_4160_5af7ca72db_0567effd2c.webp",
+            "alt": "Event of the Horizonte Village new development, located in Mijas"
+          },
+          "imageAdaptive": {
+            "thumbnail": "",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "original": "",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Horizonte Event",
+          "description": "Our event to celebrate the opening of the launch of the sale",
+          "image": {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "small": "https://cdn.horizonte-village.com/small_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "large": "https://cdn.horizonte-village.com/large_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "original": "https://cdn.horizonte-village.com/IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "alt": "Event of the Horizonte Village new development, located in Mijas"
+          },
+          "imageAdaptive": {
+            "thumbnail": "",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "original": "",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    "lots": [
+      {
+        "number": "1",
+        "area": "410,84",
+        "type": 1,
+        "rooms": [
+          "6",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er4",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_1_6aa9adae1a.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_1_6aa9adae1a.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_1_6aa9adae1a.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_1_6aa9adae1a.png",
+            "original": "https://cdn.horizonte-village.com/87/88/89/Villa_1_6aa9adae1a.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "2",
+        "area": "398,64",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er2",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_2_12a86fdbeb.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_2_12a86fdbeb.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_2_12a86fdbeb.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_2_12a86fdbeb.png",
+            "original": "https://cdn.horizonte-village.com/87/88/90/Villa_2_12a86fdbeb.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "3 ",
+        "area": "413,55",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er3",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_3_71340a42db.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_3_71340a42db.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_3_71340a42db.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_3_71340a42db.png",
+            "original": "https://cdn.horizonte-village.com/87/88/91/Villa_3_71340a42db.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "4 ",
+        "area": "420,39",
+        "type": 1,
+        "rooms": [
+          "6",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32ez1",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_4_7e818fc6bd.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_4_7e818fc6bd.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_4_7e818fc6bd.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_4_7e818fc6bd.png",
+            "original": "https://cdn.horizonte-village.com/87/88/92/Villa_4_7e818fc6bd.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "5",
+        "area": "391,51",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er5",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_5_6e0f2552ee.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_5_6e0f2552ee.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_5_6e0f2552ee.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_5_6e0f2552ee.png",
+            "original": "https://cdn.horizonte-village.com/87/88/93/Villa_5_6e0f2552ee.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "6",
+        "area": "394,52",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er6",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_6_8ce30abc4b.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_6_8ce30abc4b.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_6_8ce30abc4b.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_6_8ce30abc4b.png",
+            "original": "https://cdn.horizonte-village.com/87/88/94/Villa_6_8ce30abc4b.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "7",
+        "area": "380,72",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er7",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_7_b0bc17ecab.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_7_b0bc17ecab.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_7_b0bc17ecab.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_7_b0bc17ecab.png",
+            "original": "https://cdn.horizonte-village.com/87/88/95/Villa_7_b0bc17ecab.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 3
+      },
+      {
+        "number": "8 ",
+        "area": "408,45",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er8",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_8_f0cef75f91.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_8_f0cef75f91.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_8_f0cef75f91.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_8_f0cef75f91.png",
+            "original": "https://cdn.horizonte-village.com/87/88/96/Villa_8_f0cef75f91.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "9 ",
+        "area": "403,48",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er9",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_9_a08c2bfc61.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_9_a08c2bfc61.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_9_a08c2bfc61.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_9_a08c2bfc61.png",
+            "original": "https://cdn.horizonte-village.com/87/88/97/Villa_9_a08c2bfc61.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "10 ",
+        "area": "440,89",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32er10",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_10_f9d7fcaea4.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_10_f9d7fcaea4.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_10_f9d7fcaea4.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_10_f9d7fcaea4.png",
+            "original": "https://cdn.horizonte-village.com/87/88/98/Villa_10_f9d7fcaea4.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "11 ",
+        "area": "372,02",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32egfv",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_11_1_1_1ea7a11f06.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_11_1_1_1ea7a11f06.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_11_1_1_1ea7a11f06.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_11_1_1_1ea7a11f06.png",
+            "original": "https://cdn.horizonte-village.com/87/88/99/Villa_11_1_1_1ea7a11f06.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "12 ",
+        "area": "426,38",
+        "type": 1,
+        "rooms": [
+          "4",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh32",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_12_8531ffe5ba.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_12_8531ffe5ba.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_12_8531ffe5ba.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_12_8531ffe5ba.png",
+            "original": "https://cdn.horizonte-village.com/87/88/100/Villa_12_8531ffe5ba.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "13",
+        "area": "411,23",
+        "type": 1,
+        "rooms": [
+          "4",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh33",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_13_1d833a0ad7.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_13_1d833a0ad7.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_13_1d833a0ad7.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_13_1d833a0ad7.png",
+            "original": "https://cdn.horizonte-village.com/87/88/101/Villa_13_1d833a0ad7.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "14",
+        "area": "410,57",
+        "type": 1,
+        "rooms": [
+          "4",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "29b-23bjh34",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_14_bf8cba1847.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_14_bf8cba1847.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_14_bf8cba1847.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_14_bf8cba1847.png",
+            "original": "https://cdn.horizonte-village.com/87/88/102/Villa_14_bf8cba1847.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "15",
+        "area": "424,46",
+        "type": 1,
+        "rooms": [
+          "4",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "rsfdfi12304",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_15_45b5a1f73d.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_15_45b5a1f73d.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_15_45b5a1f73d.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_15_45b5a1f73d.png",
+            "original": "https://cdn.horizonte-village.com/87/88/103/Villa_15_45b5a1f73d.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "16",
+        "area": "399,97",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "bczpi2914",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_16_d9d618446f.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_16_d9d618446f.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_16_d9d618446f.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_16_d9d618446f.png",
+            "original": "https://cdn.horizonte-village.com/87/88/104/Villa_16_d9d618446f.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "17",
+        "area": "426,28",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "zadpwej10824",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_17_2c6c28b0e0.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_17_2c6c28b0e0.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_17_2c6c28b0e0.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_17_2c6c28b0e0.png",
+            "original": "https://cdn.horizonte-village.com/87/88/105/Villa_17_2c6c28b0e0.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "18",
+        "area": "367,99",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "vdoihgro12345",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_18_05703b341b.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_18_05703b341b.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_18_05703b341b.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_18_05703b341b.png",
+            "original": "https://cdn.horizonte-village.com/87/88/106/Villa_18_05703b341b.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "19",
+        "area": "374,07",
+        "type": 1,
+        "rooms": [
+          "4",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "omcvdu2139",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_19_7f67d4bd62.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_19_7f67d4bd62.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_19_7f67d4bd62.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_19_7f67d4bd62.png",
+            "original": "https://cdn.horizonte-village.com/87/88/107/Villa_19_7f67d4bd62.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "20",
+        "area": "443,23",
+        "type": 1,
+        "rooms": [
+          "6",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "4",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "iweggu2308",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_20_456d01a138.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_20_456d01a138.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_20_456d01a138.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_20_456d01a138.png",
+            "original": "https://cdn.horizonte-village.com/87/88/108/Villa_20_456d01a138.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "21",
+        "area": "384,21",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "uweyrqb3754",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_21_86e0ac0df3.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_21_86e0ac0df3.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_21_86e0ac0df3.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_21_86e0ac0df3.png",
+            "original": "https://cdn.horizonte-village.com/87/88/109/Villa_21_86e0ac0df3.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "22",
+        "area": "384,21",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "unyviw9318",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_22_0d00867a0f.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_22_0d00867a0f.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_22_0d00867a0f.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_22_0d00867a0f.png",
+            "original": "https://cdn.horizonte-village.com/87/88/110/Villa_22_0d00867a0f.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      },
+      {
+        "number": "23",
+        "area": "384,21",
+        "type": 1,
+        "rooms": [
+          "5",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "5",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "mcizue3872",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_Villa_23_c6a6c71420.png",
+            "small": "https://cdn.horizonte-village.com/small_Villa_23_c6a6c71420.png",
+            "medium": "https://cdn.horizonte-village.com/medium_Villa_23_c6a6c71420.png",
+            "large": "https://cdn.horizonte-village.com/large_Villa_23_c6a6c71420.png",
+            "original": "https://cdn.horizonte-village.com/87/88/111/Villa_23_c6a6c71420.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 1
+      }
+    ],
+    "filtersData": {
+      "rooms": [
+        {
+          "id": 4,
+          "title": "4"
+        },
+        {
+          "id": 5,
+          "title": "5"
+        },
+        {
+          "id": 6,
+          "title": "6"
+        }
+      ],
+      "storeys": [
+        {
+          "id": 1,
+          "title": "Single-story"
+        },
+        {
+          "id": 3,
+          "title": "Two-story"
+        }
+      ]
+    }
+  },
+  "residences": {
+    "pageData": {
+      "meta": {
+        "title": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "description": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "keywords": "development model, development model, development model, ",
+        "ogTitle": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "ogDescription": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "ogImage": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "ogImageAlt": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "ogImageUrl": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "ogSiteName": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterTitle": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterDescription": "Browse our selection of luxury villas and exclusive residences for sale in Mijas, Costa del Sol, featuring modern design, sea views, private pools, and top-tier amenities.",
+        "twitterImage": "https://cdn.horizonte-village.com/Gen_plan_1_c41a75f279_8f2ed8588a.webp",
+        "twitterImageAlt": "Villas and Residences for Sale in Mijas, Costa del Sol - Horizonte Village",
+        "twitterCard": "summary_large_image"
+      },
+      "promos": [
+        {
+          "title": "Horizonte Event",
+          "description": "Our event to celebrate the opening of the launch of the sale",
+          "image": {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "small": "https://cdn.horizonte-village.com/small_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "large": "https://cdn.horizonte-village.com/large_IMG_4160_5af7ca72db_0567effd2c.webp",
+            "original": "https://cdn.horizonte-village.com/IMG_4160_5af7ca72db_0567effd2c.webp",
+            "alt": "Event of the Horizonte Village new development, located in Mijas"
+          },
+          "imageAdaptive": {
+            "thumbnail": "",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "original": "",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Horizonte Event",
+          "description": "Our event to celebrate the opening of the launch of the sale",
+          "image": {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "small": "https://cdn.horizonte-village.com/small_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "large": "https://cdn.horizonte-village.com/large_IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "original": "https://cdn.horizonte-village.com/IMG_4159_76bd337c2b_bd91cb6005.webp",
+            "alt": "Event of the Horizonte Village new development, located in Mijas"
+          },
+          "imageAdaptive": {
+            "thumbnail": "",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "original": "",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    "lots": [
+      {
+        "number": "401",
+        "area": "175,02",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "test",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_37_Block_4_401_d6bf19cbb4_a66d6bbfeb.webp",
+            "small": "https://cdn.horizonte-village.com/small_37_Block_4_401_d6bf19cbb4_a66d6bbfeb.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_37_Block_4_401_d6bf19cbb4_a66d6bbfeb.webp",
+            "large": "https://cdn.horizonte-village.com/large_37_Block_4_401_d6bf19cbb4_a66d6bbfeb.webp",
+            "original": "https://cdn.horizonte-village.com/37_Block_4_401_d6bf19cbb4_a66d6bbfeb.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "402",
+        "area": "174,17",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "dgnrtgieu1307",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_38_Block_4_402_af4e156b8d_155f6daa40.webp",
+            "small": "https://cdn.horizonte-village.com/small_38_Block_4_402_af4e156b8d_155f6daa40.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_38_Block_4_402_af4e156b8d_155f6daa40.webp",
+            "large": "https://cdn.horizonte-village.com/large_38_Block_4_402_af4e156b8d_155f6daa40.webp",
+            "original": "https://cdn.horizonte-village.com/38_Block_4_402_af4e156b8d_155f6daa40.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "403",
+        "area": "164,42",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "vnisegoi2139",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_39_Block_4_403_a3e981ffa1_ec4f60265d.webp",
+            "small": "https://cdn.horizonte-village.com/small_39_Block_4_403_a3e981ffa1_ec4f60265d.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_39_Block_4_403_a3e981ffa1_ec4f60265d.webp",
+            "large": "https://cdn.horizonte-village.com/large_39_Block_4_403_a3e981ffa1_ec4f60265d.webp",
+            "original": "https://cdn.horizonte-village.com/39_Block_4_403_a3e981ffa1_ec4f60265d.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "411",
+        "area": "148,25",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "vnsoebo2139",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_40_Block_4_411_1970f202a5_ce559b68c4.webp",
+            "small": "https://cdn.horizonte-village.com/small_40_Block_4_411_1970f202a5_ce559b68c4.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_40_Block_4_411_1970f202a5_ce559b68c4.webp",
+            "large": "https://cdn.horizonte-village.com/large_40_Block_4_411_1970f202a5_ce559b68c4.webp",
+            "original": "https://cdn.horizonte-village.com/40_Block_4_411_1970f202a5_ce559b68c4.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "413",
+        "area": "147,99",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "wgenoi5128",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_42_Block_4_413_edd01c34bc_8d55dc22d1.webp",
+            "small": "https://cdn.horizonte-village.com/small_42_Block_4_413_edd01c34bc_8d55dc22d1.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_42_Block_4_413_edd01c34bc_8d55dc22d1.webp",
+            "large": "https://cdn.horizonte-village.com/large_42_Block_4_413_edd01c34bc_8d55dc22d1.webp",
+            "original": "https://cdn.horizonte-village.com/42_Block_4_413_edd01c34bc_8d55dc22d1.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "421",
+        "area": "324,43",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "bbdp3249",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_44_Block_4_421_penthouse_cfe9d49b5b_a83cef5a87.webp",
+            "small": "https://cdn.horizonte-village.com/small_44_Block_4_421_penthouse_cfe9d49b5b_a83cef5a87.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_44_Block_4_421_penthouse_cfe9d49b5b_a83cef5a87.webp",
+            "large": "https://cdn.horizonte-village.com/large_44_Block_4_421_penthouse_cfe9d49b5b_a83cef5a87.webp",
+            "original": "https://cdn.horizonte-village.com/44_Block_4_421_penthouse_cfe9d49b5b_a83cef5a87.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "422",
+        "area": "323,99",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "vsdvjin2145",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_46_Block_4_422_penthouse_28cdc9c154_b787734120.webp",
+            "small": "https://cdn.horizonte-village.com/small_46_Block_4_422_penthouse_28cdc9c154_b787734120.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_46_Block_4_422_penthouse_28cdc9c154_b787734120.webp",
+            "large": "https://cdn.horizonte-village.com/large_46_Block_4_422_penthouse_28cdc9c154_b787734120.webp",
+            "original": "https://cdn.horizonte-village.com/46_Block_4_422_penthouse_28cdc9c154_b787734120.webp",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "301",
+        "area": "163,72",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "nvsoi3954",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_301res_0_460701e5c2.png",
+            "small": "https://cdn.horizonte-village.com/small_301res_0_460701e5c2.png",
+            "medium": "https://cdn.horizonte-village.com/medium_301res_0_460701e5c2.png",
+            "large": "https://cdn.horizonte-village.com/large_301res_0_460701e5c2.png",
+            "original": "https://cdn.horizonte-village.com/87/112/113/301res_0_460701e5c2.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "302",
+        "area": "150,14",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "mikerpo3562",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_302res_0_f5946e272f.png",
+            "small": "https://cdn.horizonte-village.com/small_302res_0_f5946e272f.png",
+            "medium": "https://cdn.horizonte-village.com/medium_302res_0_f5946e272f.png",
+            "large": "https://cdn.horizonte-village.com/large_302res_0_f5946e272f.png",
+            "original": "https://cdn.horizonte-village.com/87/112/114/302res_0_f5946e272f.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "303",
+        "area": "163,50",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "ingsi3579",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_303res_0_045f689dd9.png",
+            "small": "https://cdn.horizonte-village.com/small_303res_0_045f689dd9.png",
+            "medium": "https://cdn.horizonte-village.com/medium_303res_0_045f689dd9.png",
+            "large": "https://cdn.horizonte-village.com/large_303res_0_045f689dd9.png",
+            "original": "https://cdn.horizonte-village.com/87/112/115/303res_0_045f689dd9.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "311",
+        "area": "136,10",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "afaejb4972",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_30_Block_3_311_b6016666af_4f128b97f3.webp",
+            "small": "https://cdn.horizonte-village.com/small_30_Block_3_311_b6016666af_4f128b97f3.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_30_Block_3_311_b6016666af_4f128b97f3.webp",
+            "large": "https://cdn.horizonte-village.com/large_30_Block_3_311_b6016666af_4f128b97f3.webp",
+            "original": "https://cdn.horizonte-village.com/30_Block_3_311_b6016666af_4f128b97f3.webp",
+            "alt": "Floorplan of a residence of Horizonte Village project, new development located in Mijas"
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "312",
+        "area": "136,29",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "kgsgip4964",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_31_Block_3_312_c8a0ad72d7_0de148e8bb.webp",
+            "small": "https://cdn.horizonte-village.com/small_31_Block_3_312_c8a0ad72d7_0de148e8bb.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_31_Block_3_312_c8a0ad72d7_0de148e8bb.webp",
+            "large": "https://cdn.horizonte-village.com/large_31_Block_3_312_c8a0ad72d7_0de148e8bb.webp",
+            "original": "https://cdn.horizonte-village.com/31_Block_3_312_c8a0ad72d7_0de148e8bb.webp",
+            "alt": "Floorplan of a residence of Horizonte Village project, new development located in Mijas"
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "313",
+        "area": "136,18",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "sdbsrio3946",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_32_Block_3_313_01906aa1f0_3fc03a5854.webp",
+            "small": "https://cdn.horizonte-village.com/small_32_Block_3_313_01906aa1f0_3fc03a5854.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_32_Block_3_313_01906aa1f0_3fc03a5854.webp",
+            "large": "https://cdn.horizonte-village.com/large_32_Block_3_313_01906aa1f0_3fc03a5854.webp",
+            "original": "https://cdn.horizonte-village.com/32_Block_3_313_01906aa1f0_3fc03a5854.webp",
+            "alt": "Floorplan of a residence of Horizonte Village project, new development located in Mijas"
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "321",
+        "area": "346,35",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "svddsir3928",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_34_Block_3_321_penthouse_b5561c22cc_9f5a28fd4a.webp",
+            "small": "https://cdn.horizonte-village.com/small_34_Block_3_321_penthouse_b5561c22cc_9f5a28fd4a.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_34_Block_3_321_penthouse_b5561c22cc_9f5a28fd4a.webp",
+            "large": "https://cdn.horizonte-village.com/large_34_Block_3_321_penthouse_b5561c22cc_9f5a28fd4a.webp",
+            "original": "https://cdn.horizonte-village.com/34_Block_3_321_penthouse_b5561c22cc_9f5a28fd4a.webp",
+            "alt": "Floorplan of a residence of Horizonte Village project, new development located in Mijas"
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "322",
+        "area": "346,42",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 2025",
+        "link": "vsdgesjl2138",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_36_Block_3_322_penthouse_bcec0a2f31_54901c97d2.webp",
+            "small": "https://cdn.horizonte-village.com/small_36_Block_3_322_penthouse_bcec0a2f31_54901c97d2.webp",
+            "medium": "https://cdn.horizonte-village.com/medium_36_Block_3_322_penthouse_bcec0a2f31_54901c97d2.webp",
+            "large": "https://cdn.horizonte-village.com/large_36_Block_3_322_penthouse_bcec0a2f31_54901c97d2.webp",
+            "original": "https://cdn.horizonte-village.com/36_Block_3_322_penthouse_bcec0a2f31_54901c97d2.webp",
+            "alt": "Floorplan of a residence of Horizonte Village project, new development located in Mijas"
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "201",
+        "area": "173",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "pbmwpro12351",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_201res_c9f87b2d43.png",
+            "small": "https://cdn.horizonte-village.com/small_201res_c9f87b2d43.png",
+            "medium": "https://cdn.horizonte-village.com/medium_201res_c9f87b2d43.png",
+            "large": "https://cdn.horizonte-village.com/large_201res_c9f87b2d43.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/201res_c9f87b2d43.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "202",
+        "area": "148",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vowneo214041",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_202res_6c37509ad6.png",
+            "small": "https://cdn.horizonte-village.com/small_202res_6c37509ad6.png",
+            "medium": "https://cdn.horizonte-village.com/medium_202res_6c37509ad6.png",
+            "large": "https://cdn.horizonte-village.com/large_202res_6c37509ad6.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/202res_6c37509ad6.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "203",
+        "area": "173",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vsdon1240159",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_203res_65a90a52ab.png",
+            "small": "https://cdn.horizonte-village.com/small_203res_65a90a52ab.png",
+            "medium": "https://cdn.horizonte-village.com/medium_203res_65a90a52ab.png",
+            "large": "https://cdn.horizonte-village.com/large_203res_65a90a52ab.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/203res_65a90a52ab.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "211",
+        "area": "154",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vspvi1240347",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_211res_f17568b1df.png",
+            "small": "https://cdn.horizonte-village.com/small_211res_f17568b1df.png",
+            "medium": "https://cdn.horizonte-village.com/medium_211res_f17568b1df.png",
+            "large": "https://cdn.horizonte-village.com/large_211res_f17568b1df.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/211res_f17568b1df.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "212",
+        "area": "138",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "sdfmsg21405182",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_212res_be09f6c77a.png",
+            "small": "https://cdn.horizonte-village.com/small_212res_be09f6c77a.png",
+            "medium": "https://cdn.horizonte-village.com/medium_212res_be09f6c77a.png",
+            "large": "https://cdn.horizonte-village.com/large_212res_be09f6c77a.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/212res_be09f6c77a.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "213",
+        "area": "154",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "svpmsid23525",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_213res_d95cbee6e5.png",
+            "small": "https://cdn.horizonte-village.com/small_213res_d95cbee6e5.png",
+            "medium": "https://cdn.horizonte-village.com/medium_213res_d95cbee6e5.png",
+            "large": "https://cdn.horizonte-village.com/large_213res_d95cbee6e5.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/213res_d95cbee6e5.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "221",
+        "area": "364",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vsvospok324523",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_221res_1b290341bd.png",
+            "small": "https://cdn.horizonte-village.com/small_221res_1b290341bd.png",
+            "medium": "https://cdn.horizonte-village.com/medium_221res_1b290341bd.png",
+            "large": "https://cdn.horizonte-village.com/large_221res_1b290341bd.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/221res_1b290341bd.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "222",
+        "area": "364",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vzvzdivw151353",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_222res_6a06f891f4.png",
+            "small": "https://cdn.horizonte-village.com/small_222res_6a06f891f4.png",
+            "medium": "https://cdn.horizonte-village.com/medium_222res_6a06f891f4.png",
+            "large": "https://cdn.horizonte-village.com/large_222res_6a06f891f4.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/119/222res_6a06f891f4.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "101",
+        "area": "164",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "svsmoesg12415",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_101res_668b516dab.png",
+            "small": "https://cdn.horizonte-village.com/small_101res_668b516dab.png",
+            "medium": "https://cdn.horizonte-village.com/medium_101res_668b516dab.png",
+            "large": "https://cdn.horizonte-village.com/large_101res_668b516dab.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/101res_668b516dab.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "102",
+        "area": "150",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "oagwimo235252",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_102res_c9fe03dcde.png",
+            "small": "https://cdn.horizonte-village.com/small_102res_c9fe03dcde.png",
+            "medium": "https://cdn.horizonte-village.com/medium_102res_c9fe03dcde.png",
+            "large": "https://cdn.horizonte-village.com/large_102res_c9fe03dcde.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/102res_c9fe03dcde.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "103",
+        "area": "163",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "cpaspfim214914",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_103res_9b107c9241.png",
+            "small": "https://cdn.horizonte-village.com/small_103res_9b107c9241.png",
+            "medium": "https://cdn.horizonte-village.com/medium_103res_9b107c9241.png",
+            "large": "https://cdn.horizonte-village.com/large_103res_9b107c9241.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/103res_9b107c9241.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 5
+      },
+      {
+        "number": "111",
+        "area": "135",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vwoegnoi124235",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_111res_bfbe51d6fd.png",
+            "small": "https://cdn.horizonte-village.com/small_111res_bfbe51d6fd.png",
+            "medium": "https://cdn.horizonte-village.com/medium_111res_bfbe51d6fd.png",
+            "large": "https://cdn.horizonte-village.com/large_111res_bfbe51d6fd.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/111res_bfbe51d6fd.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "112",
+        "area": "137",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "vsdoiio1421523",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_112res_dddfab9c12.png",
+            "small": "https://cdn.horizonte-village.com/small_112res_dddfab9c12.png",
+            "medium": "https://cdn.horizonte-village.com/medium_112res_dddfab9c12.png",
+            "large": "https://cdn.horizonte-village.com/large_112res_dddfab9c12.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/112res_dddfab9c12.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "113",
+        "area": "136",
+        "type": 3,
+        "rooms": [
+          "2",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "2",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "obidfg235235",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_113res_f38602aa2e.png",
+            "small": "https://cdn.horizonte-village.com/small_113res_f38602aa2e.png",
+            "medium": "https://cdn.horizonte-village.com/medium_113res_f38602aa2e.png",
+            "large": "https://cdn.horizonte-village.com/large_113res_f38602aa2e.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/113res_f38602aa2e.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 0
+      },
+      {
+        "number": "121",
+        "area": "356",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "bdfbio2354253",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_121res_589ad1bcf6.png",
+            "small": "https://cdn.horizonte-village.com/small_121res_589ad1bcf6.png",
+            "medium": "https://cdn.horizonte-village.com/medium_121res_589ad1bcf6.png",
+            "large": "https://cdn.horizonte-village.com/large_121res_589ad1bcf6.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/121res_589ad1bcf6.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      },
+      {
+        "number": "122",
+        "area": "356",
+        "type": 3,
+        "rooms": [
+          "3",
+          "Bedrooms"
+        ],
+        "bathrooms": [
+          "3",
+          "Bathrooms"
+        ],
+        "commissioning": "Q1 1970",
+        "link": "osbsobm2152523",
+        "images": [
+          {
+            "thumbnail": "https://cdn.horizonte-village.com/thumbnail_122res_9145ce3526.png",
+            "small": "https://cdn.horizonte-village.com/small_122res_9145ce3526.png",
+            "medium": "https://cdn.horizonte-village.com/medium_122res_9145ce3526.png",
+            "large": "https://cdn.horizonte-village.com/large_122res_9145ce3526.png",
+            "original": "https://cdn.horizonte-village.com/41/57/59/120/122res_9145ce3526.png",
+            "alt": ""
+          }
+        ],
+        "imageAdaptive": {
+          "thumbnail": "",
+          "small": "",
+          "medium": "",
+          "large": "",
+          "original": "",
+          "alt": ""
+        },
+        "storeyId": 6
+      }
+    ],
+    "filtersData": {
+      "rooms": [
+        {
+          "id": 2,
+          "title": "2"
+        },
+        {
+          "id": 3,
+          "title": "3"
+        }
+      ],
+      "storeys": [
+        {
+          "id": 5,
+          "title": "Ground Floor"
+        },
+        {
+          "id": 6,
+          "title": "Penthouse"
+        }
+      ]
+    }
+  }
+}
