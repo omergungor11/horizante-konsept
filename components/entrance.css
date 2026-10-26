@@ -1,0 +1,30 @@
+.entry-preloader{position:fixed;top:0;left:0;width:100%;height:100vh;height:100svh;background:var(--c-base-0);z-index:110;transform:translateZ(200px);overflow:hidden}
+.entry-sketch{position:absolute;inset:0;overflow:hidden;mask-image:url('/images/preloader-mask/sketchmask-new.webp');mask-position:center;mask-size:cover;pointer-events:none}
+.entry-sketch svg{display:block;position:absolute;inset:0;width:100%;height:100%}
+.entry-logo{position:absolute;width:9.0625rem;height:9.0625rem;left:50%;top:50%;transform:translate(-50%,-50%)}
+.entry-logo img{width:100%;height:100%}
+.entry-loading{position:absolute;left:50%;bottom:3rem;transform:translateX(-50%);display:flex;align-items:baseline;text-transform:uppercase;white-space:nowrap}
+.entry-number{margin-left:.5rem}.entry-number span{font-family:var(--canela);font-weight:400}
+.entry-selector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));height:100%;width:100%;position:absolute;left:0;top:0}
+.entry-divider{position:absolute;left:50%;top:0;width:1px;height:100%;pointer-events:none;background:var(--c-base-1000-10);transform:translateX(-50%);transition:transform .8s var(--easing)}
+.entry-divider.left{transform:translateX(-3vw)}.entry-divider.right{transform:translateX(3vw)}
+.entry-option{align-items:center;animation:entry-option-in .6s forwards var(--easing);cursor:pointer;display:flex;flex-direction:column;isolation:isolate;justify-content:center;opacity:0;overflow:hidden;padding:3rem 0 3rem 3rem;position:relative}
+.entry-option:nth-child(2){animation-delay:.3s;padding:3rem 3rem 3rem 0}
+.entry-canvas{height:calc(120% - 7.2rem);left:52%;object-fit:contain;position:absolute;top:48%;transform:translate3d(-50%,-50%,1px);transition:transform .8s var(--easing);width:calc(120% - 3.6rem);z-index:-1}
+.entry-option:nth-child(2) .entry-canvas{left:48%;top:50%}
+.entry-title{align-items:flex-start;color:var(--c-base-1000);display:flex;text-transform:uppercase;transform:translateZ(2px);transition:color .8s var(--easing),transform .8s var(--easing)}
+.entry-button{margin-top:1.5rem;transform:translateZ(2px);transition:transform .8s var(--easing)}
+.entry-button-inner{position:relative;isolation:isolate;overflow:hidden;display:block;padding:.625rem .75rem;border-radius:.25rem;color:var(--c-base-1000);text-transform:uppercase;font-size:.75rem;line-height:1;transition:padding .6s var(--easing),color .6s var(--easing)}
+.entry-button-inner:before{content:'';position:absolute;inset:0;z-index:-1;background:#ffffff1a;transform:scaleX(0);transition:transform .8s var(--easing);border-radius:.25rem}
+.entry-option.hover .entry-title,.entry-option.hover .entry-button-inner{color:#fff}
+.entry-option.hover .entry-button-inner{padding:.625rem 1rem}.entry-option.hover .entry-button-inner:before{transform:scaleX(1)}
+.entry-option:first-child.hover .entry-canvas{transform:translate3d(calc(-50% + 3vw),-50%,1px)}
+.entry-option:first-child.hover .entry-title,.entry-option:first-child.hover .entry-button{transform:translateX(3vw)}
+.entry-option:nth-child(2).hover .entry-canvas{transform:translate3d(calc(-50% - 3vw),-50%,1px)}
+.entry-option:nth-child(2).hover .entry-title,.entry-option:nth-child(2).hover .entry-button{transform:translateX(-3vw)}
+@keyframes entry-option-in{from{opacity:0}to{opacity:1}}
+@media(max-width:1023px){.entry-sketch{display:none}.entry-logo{height:6.5rem;width:6.5rem}.entry-loading{bottom:2rem}.entry-selector{display:block}.entry-divider{display:none}.entry-option,.entry-option:nth-child(2){height:50vh;height:50svh;width:100%;padding:0;overflow:visible}.entry-canvas,.entry-option:nth-child(2) .entry-canvas{height:120%;width:120%;left:50%;top:50%}.entry-button{margin-top:1rem}.entry-option:first-child.hover .entry-canvas,.entry-option:nth-child(2).hover .entry-canvas{transform:translate3d(-50%,-50%,1px)}.entry-option.hover .entry-title,.entry-option.hover .entry-button{transform:translateX(0)}.entry-option.hover .entry-button-inner{padding:.625rem .75rem}.entry-button-inner:before{display:none}}
+@media(prefers-reduced-motion:reduce){.entry-canvas,.entry-title,.entry-button,.entry-divider{transition:none}.entry-option{animation-duration:.01ms}}
+
+.entry-option:focus-visible{outline:0}.entry-option:focus-visible .entry-button-inner{outline:1px solid currentColor;outline-offset:4px}
+@media(max-width:1023px){.entry-option:first-child.hover .entry-title,.entry-option:first-child.hover .entry-button,.entry-option:nth-child(2).hover .entry-title,.entry-option:nth-child(2).hover .entry-button{transform:translateX(0)}}

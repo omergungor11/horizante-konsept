@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { CustomEase } from "gsap/CustomEase";
 import "./lower-sections.css";
 import { InteractivePlan } from "./GeneralPlan";
 
@@ -19,6 +21,12 @@ export default function LowerSections({ category: externalCategory }: { category
   const root = useRef<HTMLDivElement>(null);
   const amenitiesTrack = useRef<HTMLDivElement>(null);
   const dragDistance = useRef(0);
+  const roomMotion = useRef<gsap.core.Timeline | null>(null);
+  const tooltip = useRef<HTMLDivElement>(null);
+  const progressTrack = useRef<HTMLDivElement>(null);
+  const [detailRoomIndex, setDetailRoomIndex] = useState(0);
+  const [roomChanging, setRoomChanging] = useState(false);
+  const [progressIndex, setProgressIndex] = useState(0);
   const [category, setCategory] = useState<Category>(externalCategory || "villas");
   const [roomIndex, setRoomIndex] = useState(0);
   const [hotspot, setHotspot] = useState<number | null>(null);
@@ -31,7 +39,7 @@ export default function LowerSections({ category: externalCategory }: { category
   const [emailHref, setEmailHref] = useState("");
   const rooms = content.rooms.filter(room => room.type === category);
   const amenities = content.amenities.filter(item => item.type === category);
-  const currentRoom = rooms[Math.min(roomIndex, rooms.length - 1)];
+  const currentRoom = rooms[Math.min(detailRoomIndex, rooms.length - 1)];
 
   useEffect(() => { if (externalCategory) { setCategory(externalCategory); setRoomIndex(0); } }, [externalCategory]);
   useEffect(() => {
@@ -44,50 +52,144 @@ export default function LowerSections({ category: externalCategory }: { category
     return () => window.removeEventListener("category-change", updateCategory);
   }, []);
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+    CustomEase.create("lower-default", "0.16,1,0.3,1");
     if (!root.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    gsap.registerPlugin(ScrollTrigger);
+    const splits: SplitText[] = [];
     const ctx = gsap.context(() => {
+      // Original Ab(): characters scale from 1.7, 0.5s, edge stagger 0.015.
       gsap.utils.toArray<HTMLElement>(".lower-reveal").forEach(el => {
-        gsap.fromTo(el, { opacity: 0, y: 45 }, { opacity: 1, y: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 93%", once: true } });
+        const split = new SplitText(el, { type: "words,chars", tag: "span" });
+        splits.push(split);
+        gsap.set([...split.words, ...split.chars], { display: "inline-block" });
+        const animation = gsap.timeline({ scrollTrigger: { trigger: el, start: "top bottom", toggleActions: "play none none none" } });
+        split.words.forEach(word => {
+          if (!word.children.length) return;
+          animation.fromTo(word.children, { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: .5, ease: "lower-default", stagger: { each: .015, from: "edges" } }, `previous+=${Math.random() * .5}`);
+        });
       });
-      gsap.utils.toArray<HTMLElement>(".lower-parallax").forEach(el => {
-        gsap.fromTo(el, { yPercent: -6, scale: 1.14 }, { yPercent: 6, scale: 1.14, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: true } });
-      });
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        gsap.utils.toArray<HTMLElement>(".lower-parallax").forEach(el => {
+          gsap.fromTo(el, { yPercent: -20 }, { yPercent: 20, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: true, invalidateOnRefresh: true } });
+        });
+      }
     }, root);
-    return () => ctx.revert();
+    return () => { ctx.revert(); splits.forEach(split => split.revert()); };
   }, []);
+  useEffect(() => {
+    roomMotion.current?.kill();
+    setRoomIndex(0); setDetailRoomIndex(0); setRoomChanging(false); setHotspot(null);
+    const photos = root.current?.querySelectorAll<HTMLElement>(".lower-room-image");
+    photos?.forEach((photo, index) => {
+      gsap.set(photo, { xPercent: 0, zIndex: index === 0 ? 3 : -1 });
+      gsap.set(photo.firstElementChild, { scaleX: 1, scaleY: 1, xPercent: 0 });
+    });
+    amenitiesTrack.current?.scrollTo({ left: 0 });
+  }, [category]);
+  useEffect(() => {
+    if (activeAmenity === null) return;
+    const card = amenitiesTrack.current?.children[activeAmenity] as HTMLElement | undefined;
+    const description = card?.querySelector<HTMLElement>(".lower-amenity-description");
+    if (!description) return;
+    let split: SplitText | undefined;
+    let animation: gsap.core.Tween | undefined;
+    // Original Space.T waits for the 0.5s circle collapse, then Hb(text,100).
+    const timer = window.setTimeout(() => {
+      gsap.set(description, { opacity: 1 });
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        split = new SplitText(description, { type: "lines" });
+        animation = gsap.from(split.lines, { yPercent: 100, autoAlpha: 0, duration: .8, stagger: .05, ease: "lower-default" });
+      }
+    }, 500);
+    const closeOutside = (event: PointerEvent) => { if (!card?.contains(event.target as Node)) setActiveAmenity(null); };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => { window.clearTimeout(timer); animation?.kill(); split?.revert(); gsap.set(description, { clearProps: "opacity" }); document.removeEventListener("pointerdown", closeOutside); };
+  }, [activeAmenity, category]);
+  useEffect(() => {
+    const close = () => setHotspot(null);
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, []);
+  useEffect(() => {
+    ScrollTrigger.refresh();
+    if (journalTab !== "progress") return;
+    setProgressIndex(0);
+    const track = progressTrack.current;
+    if (!track) return;
+    let start = 0, initial = 0, dragging = false;
+    const down = (event: PointerEvent) => { if (event.pointerType !== "mouse" || event.button !== 0) return; start = event.clientX; initial = track.scrollLeft; dragging = true; dragDistance.current = 0; track.classList.add("is-dragging"); };
+    const move = (event: PointerEvent) => { if (!dragging) return; const delta = event.clientX - start; dragDistance.current = Math.max(dragDistance.current, Math.abs(delta)); track.scrollLeft = initial - delta; if (Math.abs(delta) > 5) event.preventDefault(); };
+    const up = () => { dragging = false; track.classList.remove("is-dragging"); };
+    const nativeDrag = (event: DragEvent) => event.preventDefault();
+    track.addEventListener("pointerdown", down); track.addEventListener("dragstart", nativeDrag); window.addEventListener("pointermove", move, { passive: false }); window.addEventListener("pointerup", up); window.addEventListener("pointercancel", up);
+    return () => { track.removeEventListener("pointerdown", down); track.removeEventListener("dragstart", nativeDrag); window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); window.removeEventListener("pointercancel", up); };
+  }, [journalTab]);
   useEffect(() => {
     const track = amenitiesTrack.current;
     if (!track) return;
     let startX = 0, initialScroll = 0, dragging = false;
+    let momentum: gsap.core.Animation | undefined;
+    let samples: { x: number; time: number }[] = [];
+    const position = { value: track.scrollLeft };
+    const children = Array.from(track.children);
+    const applyPosition = () => {
+      const bounded = Math.max(0, Math.min(track.scrollWidth - track.clientWidth, position.value));
+      track.scrollLeft = bounded;
+      gsap.set(children, { x: bounded - position.value });
+    };
     const down = (event: PointerEvent) => {
       dragDistance.current = 0;
       if (event.pointerType !== "mouse" || event.button !== 0) return;
-      startX = event.clientX; initialScroll = track.scrollLeft;
-      dragDistance.current = 0; dragging = true;
+      momentum?.kill();
+      startX = event.clientX; initialScroll = position.value = track.scrollLeft;
+      gsap.set(children, { x: 0 });
+      samples = [{ x: event.clientX, time: performance.now() }];
+      dragging = true;
     };
     const move = (event: PointerEvent) => {
       if (!dragging) return;
       const distance = event.clientX - startX;
       dragDistance.current = Math.max(dragDistance.current, Math.abs(distance));
-      if (dragDistance.current > 5) {
-        track.classList.add("is-dragging");
-        track.scrollLeft = initialScroll - distance;
-        event.preventDefault();
-      }
+      if (dragDistance.current <= 5) return;
+      samples.push({ x: event.clientX, time: performance.now() }); samples = samples.slice(-2);
+      track.classList.add("is-dragging");
+      const maximum = track.scrollWidth - track.clientWidth;
+      const raw = initialScroll - distance;
+      // Swiper's default edge resistance uses an exponent of 0.85.
+      position.value = raw < 0 ? -Math.pow(-raw, .85) : raw > maximum ? maximum + Math.pow(raw - maximum, .85) : raw;
+      applyPosition(); event.preventDefault();
     };
-    const up = () => { dragging = false; track.classList.remove("is-dragging"); };
+    const up = (event: PointerEvent) => {
+      if (!dragging) return;
+      dragging = false; track.classList.remove("is-dragging");
+      const maximum = track.scrollWidth - track.clientWidth;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const [previous, latest] = samples;
+      const elapsed = latest && previous ? latest.time - previous.time : 0;
+      const sampled = elapsed > 0 ? (previous.x - latest.x) / elapsed / 2 : 0;
+      const velocity = event.type !== "pointercancel" && !reduce && Math.abs(sampled) >= .02 && elapsed <= 150 && performance.now() - (latest?.time || 0) <= 300 ? sampled : 0;
+      const projected = position.value + velocity * 1000;
+      const boundary = Math.max(0, Math.min(maximum, projected));
+      const overshoot = velocity ? Math.sign(projected - boundary) * Math.min(Math.abs(projected - boundary), Math.abs(velocity) * 20) : 0;
+      const destination = boundary + overshoot;
+      const duration = velocity ? Math.abs((destination - position.value) / velocity) / 1000 : 0;
+      const timeline = gsap.timeline({ onUpdate: applyPosition });
+      if (duration) timeline.to(position, { value: destination, duration, ease: "lower-swiper" });
+      if (position.value < 0 || position.value > maximum || overshoot) timeline.to(position, { value: boundary, duration: reduce ? 0 : .3, ease: "lower-swiper" });
+      momentum = timeline;
+    };
+    CustomEase.create("lower-swiper", ".25,.1,.25,1");
+    const stopMomentum = () => { momentum?.kill(); position.value = track.scrollLeft; gsap.set(children, { x: 0 }); };
     const nativeDrag = (event: DragEvent) => event.preventDefault();
-    track.addEventListener("pointerdown", down);
-    track.addEventListener("dragstart", nativeDrag);
-    window.addEventListener("pointermove", move, { passive: false });
-    window.addEventListener("pointerup", up);
-    window.addEventListener("pointercancel", up);
+    track.addEventListener("pointerdown", down); track.addEventListener("dragstart", nativeDrag);
+    track.addEventListener("wheel", stopMomentum, { passive: true });
+    window.addEventListener("pointermove", move, { passive: false }); window.addEventListener("pointerup", up); window.addEventListener("pointercancel", up);
     return () => {
-      track.removeEventListener("pointerdown", down); track.removeEventListener("dragstart", nativeDrag);
+      momentum?.kill(); gsap.set(children, { x: 0 });
+      track.removeEventListener("wheel", stopMomentum); track.removeEventListener("pointerdown", down); track.removeEventListener("dragstart", nativeDrag);
       window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); window.removeEventListener("pointercancel", up);
     };
-  }, []);
+  }, [category]);
   useEffect(() => {
     if (article === null && progress === null) return;
     const previousFocus = document.activeElement as HTMLElement | null;
@@ -108,6 +210,53 @@ export default function LowerSections({ category: externalCategory }: { category
     return () => { document.body.style.overflow = previousOverflow; window.removeEventListener("keydown", escape); previousFocus?.focus({ preventScroll: true }); };
   }, [article, progress]);
 
+  function changeRoom(index: number) {
+    if (index === roomIndex || roomChanging) return;
+    setHotspot(null);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setRoomIndex(index); setDetailRoomIndex(index); const photos = root.current?.querySelectorAll<HTMLElement>(".lower-room-image"); photos?.forEach((photo, i) => gsap.set(photo, { zIndex: i === index ? 3 : -1 })); return; }
+    const photos = root.current?.querySelectorAll<HTMLElement>(".lower-room-image");
+    if (!photos) return;
+    const outgoing = photos[roomIndex], incoming = photos[index];
+    setRoomIndex(index); setRoomChanging(true);
+    gsap.set(outgoing, { zIndex: 2, transformOrigin: "right center" });
+    gsap.set(incoming, { zIndex: 3, transformOrigin: "left center" });
+    roomMotion.current = gsap.timeline({ onComplete: () => { gsap.set(outgoing, { zIndex: -1 }); setRoomChanging(false); } })
+      .fromTo(outgoing, { xPercent: 0 }, { xPercent: -100, duration: 1.1, ease: "power2.out" }, 0)
+      .fromTo(outgoing.firstElementChild, { scaleX: 1, scaleY: 1, xPercent: 0 }, { scaleX: 2.2, scaleY: 1.2, xPercent: 30, duration: 1.1, ease: "power2.out" }, 0)
+      .fromTo(incoming, { xPercent: 100 }, { xPercent: 0, duration: 1.1, ease: "power2.out" }, 0)
+      .fromTo(incoming.firstElementChild, { scaleX: 2.2, scaleY: 1.2, xPercent: -30 }, { scaleX: 1, scaleY: 1, xPercent: 0, duration: 1.1, ease: "power2.out" }, 0);
+    const points = root.current?.querySelectorAll(".lower-hotspot");
+    if (points?.length) gsap.to(points, { opacity: 0, duration: .4, stagger: .1, ease: "lower-default", onComplete: () => setDetailRoomIndex(index) });
+    const description = root.current?.querySelector(".lower-room-description");
+    if (description) gsap.to(description, { yPercent: 20, autoAlpha: 0, duration: .4, ease: "lower-default" });
+    if (!points?.length) setDetailRoomIndex(index);
+  }
+  useEffect(() => {
+    if (!root.current) return;
+    const ctx = gsap.context(() => {
+      const points = root.current?.querySelectorAll(".lower-hotspot");
+      const description = root.current?.querySelector(".lower-room-description");
+      if (points?.length) gsap.fromTo(points, { opacity: 0 }, { opacity: 1, duration: .4, stagger: .1, ease: "lower-default", clearProps: "opacity" });
+      if (description) gsap.fromTo(description, { yPercent: 20, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: .4, ease: "lower-default", clearProps: "all" });
+    }, root);
+    return () => ctx.revert();
+  }, [detailRoomIndex]);
+  function positionTooltip(x: number, y: number) {
+    if (tooltip.current) gsap.set(tooltip.current, { x, y });
+  }
+  function moveProgress(direction: number) {
+    const track = progressTrack.current;
+    if (!track) return;
+    const next = Math.max(0, Math.min(content.progress.length - 1, progressIndex + direction));
+    const step = (track.children[1] as HTMLElement)?.offsetLeft - (track.children[0] as HTMLElement)?.offsetLeft;
+    if (step) {
+      // Native mandatory snapping otherwise cancels the intermediate scrollLeft
+      // values of the 700ms Swiper-style arrow transition, especially on mobile.
+      track.classList.add("is-dragging");
+      const restoreSnap = () => track.classList.remove("is-dragging");
+      gsap.to(track, { scrollLeft: next * step, duration: .7, ease: "lower-default", overwrite: "auto", onComplete: restoreSnap, onInterrupt: restoreSnap });
+    }
+  }
   function changeCategory(value: Category) {
     setCategory(value); setRoomIndex(0); setHotspot(null); setActiveAmenity(null);
     window.dispatchEvent(new CustomEvent("category-change", { detail: value }));
@@ -123,24 +272,24 @@ export default function LowerSections({ category: externalCategory }: { category
 
   return <div className="lower-sections" ref={root}>
     <section id="interior" className="lower-interior" data-header-color="light" aria-label="Interiors">
-      <div className="lower-room-images">
-        {rooms.map((room, index) => <div key={room.id} className={`lower-room-image ${index === roomIndex ? "is-active" : ""}`} aria-hidden={index !== roomIndex}><img src={asset(room.photo.original)} alt={room.photo.alt || room.title} loading="lazy" /></div>)}
+      <div className="lower-room-images"><div className="lower-room-parallax lower-parallax">
+        {rooms.map((room, index) => <div key={room.id} className={`lower-room-image ${index === roomIndex ? "is-active" : ""}`} aria-hidden={index !== roomIndex}><div className="lower-room-image-inner"><img src={asset(room.photo.original)} alt={room.photo.alt || room.title} loading="lazy" /></div></div>)}
         <div className="lower-room-shade" />
         <div className="lower-interior-label">{categorySwitch}<span>Interior</span></div>
-        {currentRoom.benefits.map((benefit, index) => <div key={benefit.id} className={`lower-hotspot ${hotspot === index ? "is-open" : ""}`} style={{ left: `${benefit.left}%`, top: `${benefit.top}%` }}>
-          <RoundButton label={`Details: ${benefit.title}`} expanded={hotspot === index} controls={`room-benefit-${benefit.id}`} onClick={() => setHotspot(hotspot === index ? null : index)}>{hotspot === index ? "−" : "+"}</RoundButton>
-          <div className="lower-hotspot-card" id={`room-benefit-${benefit.id}`} aria-hidden={hotspot !== index}><h3>{benefit.title}</h3><p>{benefit.description}</p></div>
+        {currentRoom.benefits.map((benefit, index) => <div key={benefit.id} className={`lower-hotspot ${hotspot === index ? "is-open" : ""}`} style={{ left: `${benefit.left}%`, top: `${benefit.top}%` }} onPointerEnter={event => { if (event.pointerType === "mouse") { positionTooltip(event.clientX, event.clientY); setHotspot(index); } }} onPointerMove={event => { if (event.pointerType === "mouse") positionTooltip(event.clientX, event.clientY); }} onPointerLeave={event => { if (event.pointerType === "mouse") setHotspot(null); }}>
+          <RoundButton label={`Details: ${benefit.title}`} expanded={hotspot === index} controls="lower-room-tooltip" onClick={() => { setHotspot(hotspot === index ? null : index); const point = root.current?.querySelectorAll<HTMLElement>(".lower-hotspot")[index]?.getBoundingClientRect(); if (point) positionTooltip(point.right, point.top); root.current?.querySelectorAll<HTMLElement>(".lower-mobile-benefits > div")[index]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" }); }}>{hotspot === index ? "−" : "+"}</RoundButton>
         </div>)}
-      </div>
-      <div className="lower-room-navigation">{rooms.map((room, index) => <button key={room.id} className={index === roomIndex ? "is-active" : ""} aria-pressed={index === roomIndex} onClick={() => { setRoomIndex(index); setHotspot(null); }}>{room.title}</button>)}</div>
+      </div></div>
+      <div ref={tooltip} id="lower-room-tooltip" className={`lower-hotspot-tooltip ${hotspot !== null ? "is-open" : ""}`} aria-hidden={hotspot === null}><div className="lower-hotspot-card"><h3>{hotspot !== null ? currentRoom.benefits[hotspot]?.title : ""}</h3><p>{hotspot !== null ? currentRoom.benefits[hotspot]?.description : ""}</p></div></div>
+      <div className={`lower-room-navigation ${roomChanging ? "is-changing" : ""}`}>{rooms.map((room, index) => <button key={room.id} className={index === roomIndex ? "is-active" : ""} aria-pressed={index === roomIndex} onClick={() => changeRoom(index)}>{room.title}</button>)}</div>
       {currentRoom.description && <p className="lower-room-description">{currentRoom.description}</p>}
       <div className="lower-mobile-benefits">{currentRoom.benefits.map(benefit => <div key={benefit.id}><h3>{benefit.title}</h3><p>{benefit.description}</p></div>)}</div>
     </section>
 
     <section id="amenities" className="lower-amenities" data-header-color="dark">
       <h2 className="lower-display lower-amenities-heading lower-reveal">blend <i>of</i> modern amenities designed <i>to</i> enhance lifestyle</h2>
-      <div className="lower-amenity-controls"><div>{categorySwitch}<span>Private space</span></div><div className="lower-track-progress"><span style={{ width: `${33 + amenityProgress * 67}%` }} /></div></div>
-      <div className="lower-amenities-track" ref={amenitiesTrack} onClickCapture={event => { if (event.detail !== 0 && dragDistance.current > 5) { event.preventDefault(); event.stopPropagation(); dragDistance.current = 0; } }} onScroll={event => { const el = event.currentTarget; setAmenityProgress(el.scrollLeft / Math.max(1, el.scrollWidth - el.clientWidth)); }}>
+      <div className="lower-amenity-controls"><div>{categorySwitch}<span>Private space</span></div><div className="lower-track-progress"><span style={{ width: `${100 / 3 + amenityProgress * (200 / 3)}%` }} /></div></div>
+      <div className="lower-amenities-track" ref={amenitiesTrack} onClickCapture={event => { if (event.detail !== 0 && dragDistance.current > 5) { event.preventDefault(); event.stopPropagation(); dragDistance.current = 0; } }} onScroll={event => { const el = event.currentTarget; const card = el.children[0] as HTMLElement; const visible = window.innerWidth > 1024 ? 3 : 1.26; const active = Math.round(el.scrollLeft / card.offsetWidth); setAmenityProgress(Math.min(1, ((active + 1) / (amenities.length - visible + 1) * 100 - 100 / 3) / (200 / 3))); }}>
         {amenities.map((item, index) => <button className={`lower-amenity ${activeAmenity === index ? "is-active" : ""}`} key={item.id} onClick={() => setActiveAmenity(activeAmenity === index ? null : index)} aria-expanded={activeAmenity === index}>
           <p className="lower-amenity-description">{item.description}</p><div className="lower-amenity-mark" dangerouslySetInnerHTML={{ __html: content.logo }} />
           <div className="lower-amenity-photo"><img src={asset(item.photo.original)} alt={item.photo.alt || item.title} loading="lazy" /></div>
@@ -153,14 +302,14 @@ export default function LowerSections({ category: externalCategory }: { category
     <InteractivePlan embedded />
 
     <section id="journal" className="lower-journal" data-header-color="dark">
-      <div className="lower-journal-heading lower-reveal"><button className={`lower-display ${journalTab === "guide" ? "is-active" : ""}`} aria-pressed={journalTab === "guide"} onClick={() => setJournalTab("guide")}>Costa del Sol Guide</button><i className="lower-display">and</i><button className={`lower-display ${journalTab === "progress" ? "is-active" : ""}`} aria-pressed={journalTab === "progress"} onClick={() => setJournalTab("progress")}>Construction progress</button></div>
+      <div className="lower-journal-heading"><button className={`lower-display ${journalTab === "guide" ? "is-active" : ""}`} aria-pressed={journalTab === "guide"} onClick={() => setJournalTab("guide")}><span className="lower-reveal">Costa del Sol Guide</span>{" "}<i>and</i></button><button className={`lower-display ${journalTab === "progress" ? "is-active" : ""}`} aria-pressed={journalTab === "progress"} onClick={() => setJournalTab("progress")}><span className="lower-reveal">Construction progress</span></button></div>
       {journalTab === "guide" ? <div className="lower-editorial"><p className="lower-editorial-description">Experience serene mountain living close to the vibrant city for the best of both worlds</p><div className="lower-article-grid">
         {content.articles.map((item, index) => <button className="lower-article" key={index} onClick={() => setArticle(index)}>
           <div className="lower-article-photo"><img src={asset(item.photos[0].original)} alt={`Costa del Sol ${item.tags[0]} guide`} loading="lazy" /></div>
           <h3 dangerouslySetInnerHTML={{ __html: item.title }} /><p className="lower-article-author">— {item.author}, <span>{item.position}</span></p>
           <div className="lower-article-footer"><div className="lower-article-tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><span className="lower-round lower-article-open">+</span></div>
         </button>)}
-      </div></div> : <div className="lower-progress"><div className="lower-progress-guide">▼</div><div className="lower-progress-track">{content.progress.map((item, index) => <button className="lower-progress-card" key={item.id} onClick={() => setProgress(index)}><h3>{item.preview.title}</h3><div><img src={asset(item.preview.photo.original)} alt={item.preview.title} loading="lazy" /><span className="lower-round">+</span><small>{item.details.media.length} photos</small></div><p>{new Date(`${item.preview.date}T12:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</p></button>)}</div><div className="lower-progress-ruler" /><p className="lower-progress-date">07.08.25</p></div>}
+      </div></div> : <div className="lower-progress"><div className="lower-progress-guide">▼</div><div className="lower-progress-slider"><button className="lower-progress-prev" aria-label="Previous construction update" disabled={progressIndex === 0} onClick={() => moveProgress(-1)} /><button className="lower-progress-next" aria-label="Next construction update" disabled={progressIndex === content.progress.length - 1} onClick={() => moveProgress(1)} /><div className="lower-progress-track" ref={progressTrack} onClickCapture={event => { if (event.detail !== 0 && dragDistance.current > 5) { event.preventDefault(); event.stopPropagation(); dragDistance.current = 0; } }} onScroll={event => { const track = event.currentTarget; const first = track.children[0] as HTMLElement, second = track.children[1] as HTMLElement; if (second) setProgressIndex(Math.round(track.scrollLeft / (second.offsetLeft - first.offsetLeft))); }}>{content.progress.map((item, index) => <button className={`lower-progress-card ${progressIndex === index ? "is-active" : ""}`} key={item.id} onClick={() => setProgress(index)}><h3>{item.preview.title}</h3><div><img src={asset(item.preview.photo.original)} alt={item.preview.title} loading="lazy" /><span className="lower-round">+</span><small>{item.details.media.length} photos</small></div><p>{new Date(`${item.preview.date}T12:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</p></button>)}</div></div><div className="lower-progress-guide lower-progress-guide-bottom">▲</div><div className="lower-progress-timeline"><div className="lower-progress-timeline-inner" style={{ transform: `translateX(${-progressIndex * 144 + .5}px)` }}><div className={`lower-progress-timeline-start ${progressIndex === 0 ? "is-active" : ""}`}><span>{new Date(`${content.progress[0].preview.date}T12:00:00`).toLocaleDateString("ru-RU", { day: "numeric", month: "numeric", year: "2-digit" })}</span></div>{content.progress.slice(1).map((item, index) => <div key={item.id} className={`lower-progress-timeline-segment ${progressIndex === index + 1 ? "is-active" : ""}`}>{Array.from({ length: 16 }, (_, n) => <i key={n} />)}<span>{new Date(`${item.preview.date}T12:00:00`).toLocaleDateString("ru-RU", { day: "numeric", month: "numeric", year: "2-digit" })}</span></div>)}</div></div></div>}
     </section>
 
     <section id="contact" className={`lower-feedback ${journalTab === "guide" ? "is-cut" : ""}`} data-header-color="light">
@@ -168,13 +317,13 @@ export default function LowerSections({ category: externalCategory }: { category
       <div id="contact-form" className="lower-contact-form">
         <h2 className="lower-display lower-form-title lower-reveal">Trust us <i>to</i> guide <i>you</i></h2>
         <div className="lower-form-description"><p>Our specialist will contact you as soon as possible.</p><p className="lower-display"><i>to your</i><br />future home</p></div>
-        <form onSubmit={submitRequest}><label><span className="lower-sr-only">Your name</span><input name="name" placeholder="Your name..." autoComplete="name" required minLength={2} /></label><label><span className="lower-sr-only">Your phone number</span><input name="phone" type="tel" placeholder="Phone number..." autoComplete="tel" required minLength={4} /></label><button type="submit" className="lower-request-button">Request a call <span>↗</span></button></form>
+        <form onSubmit={submitRequest}><label><span className="lower-sr-only">Your name</span><input name="name" placeholder="Type your Name..." autoComplete="name" required minLength={2} /></label><label><span className="lower-sr-only">Your phone number</span><input name="phone" type="tel" placeholder="Your Phone Number..." autoComplete="tel" required minLength={4} /></label><button type="submit" className="lower-request-button">Request</button></form>
         {requestReady && <p className="lower-request-ready" role="status">Your request is prepared locally and has not been sent. <a href={emailHref}>Send it through your email app ↗</a></p>}
         <p className="lower-form-disclaimer">By sending your request, you&apos;re agreeing to our <a href="/privacy-policy">privacy policy</a>. We promise to keep your personal information safe and secure.</p>
       </div>
     </section>
 
-    <footer className="lower-footer" data-header-color="light"><div className="lower-footer-top"><p>Contact<br /><span>Sales office</span></p><div><a className="lower-footer-phone" href="tel:+34951870700">+34 (951) 870-700</a><a className="lower-footer-email" href="mailto:info@horizonte-village.com">info@horizonte-village.com</a></div></div><a href="#home" className="lower-footer-logo" aria-label="Back to top" dangerouslySetInnerHTML={{ __html: content.logo }} /><div className="lower-footer-bottom"><div><p className="lower-footer-address">Mijas, Malaga, Spain</p><div className="lower-socials"><a className="lower-pill" href="https://maps.app.goo.gl/o7gUF37F7n7ttuNx6" target="_blank" rel="noreferrer">See on map ↗</a><a className="lower-round" href="https://www.facebook.com/profile.php?id=61562396430757" aria-label="Facebook" target="_blank" rel="noreferrer">f</a><a className="lower-round" href="https://www.instagram.com/horizonte.village" aria-label="Instagram" target="_blank" rel="noreferrer">◎</a><a className="lower-round" href="https://wa.me/+34951870700" aria-label="WhatsApp" target="_blank" rel="noreferrer">↗</a></div></div><div className="lower-footer-select"><a className="lower-pill" href="/selection?category=villas">Select villas ↗</a><a className="lower-pill" href="/selection?category=residences">Select residences ↗</a></div></div><div className="lower-copyright"><p>©Horizonte — {new Date().getFullYear()} all rights reserved</p><div><a href="/privacy-policy">Privacy policy</a><a href="/terms-of-use">Terms of use</a></div><p>Made by <a href="https://thefirstthelast.agency/" target="_blank" rel="noreferrer">The first the last</a></p></div></footer>
+    <footer className="lower-footer" data-header-color="light"><div className="lower-footer-top"><p>Contact<br /><span>Sales office</span></p><div><a className="lower-footer-phone" href="tel:+34951870700">+34 (951) 870-700</a><a className="lower-footer-email" href="mailto:info@horizonte-village.com">info@horizonte-village.com</a></div></div><a href="#home" className="lower-footer-logo" aria-label="Back to top" dangerouslySetInnerHTML={{ __html: content.logo }} /><div className="lower-footer-bottom"><div><p className="lower-footer-address">Mijas, Malaga, Spain</p><div className="lower-socials"><a className="lower-pill" href="https://maps.app.goo.gl/o7gUF37F7n7ttuNx6" target="_blank" rel="noreferrer">See on map ↗</a><a className="lower-round" href="https://www.facebook.com/profile.php?id=61562396430757" aria-label="Facebook" target="_blank" rel="noreferrer"><img src="/reference-assets/facebook_5788af98af.svg" alt="" /></a><a className="lower-round" href="https://www.instagram.com/horizonte.village" aria-label="Instagram" target="_blank" rel="noreferrer"><img src="/reference-assets/instagram_3a032063b5.svg" alt="" /></a><a className="lower-round" href="https://wa.me/+34951870700" aria-label="WhatsApp" target="_blank" rel="noreferrer"><img src="/reference-assets/whatsapp_a6d988a847.svg" alt="" /></a></div></div><div className="lower-footer-select"><a className="lower-pill" href="/selection?category=villas">Select villas ↗</a><a className="lower-pill" href="/selection?category=residences">Select residences ↗</a></div></div><div className="lower-copyright"><p>©Horizonte — {new Date().getFullYear()} all rights reserved</p><div><a href="/privacy-policy">Privacy policy</a><a href="/terms-of-use">Terms of use</a></div><p>Made by <a href="https://thefirstthelast.agency/" target="_blank" rel="noreferrer">The first the last</a></p></div></footer>
 
     {article !== null && <div className="lower-modal" role="dialog" aria-modal="true" aria-label="Costa del Sol guide"><button className="lower-modal-backdrop" aria-label="Close article" onClick={() => setArticle(null)} /><article className="lower-article-modal"><RoundButton label="Close article" className="lower-modal-close" onClick={() => setArticle(null)}>×</RoundButton><h2 className="lower-display" dangerouslySetInnerHTML={{ __html: content.articles[article].title }} /><p className="lower-article-author">— {content.articles[article].author}, {content.articles[article].position}</p><div className="lower-article-modal-text" dangerouslySetInnerHTML={{ __html: content.articles[article].text }} />{content.articles[article].photos.map((photo, index) => <img key={index} src={asset(photo.original)} alt={photo.alt || "Costa del Sol"} loading="lazy" />)}<button className="lower-pill" onClick={() => { setArticle(null); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>Request a call ↗</button></article></div>}
     {progress !== null && <div className="lower-modal" role="dialog" aria-modal="true" aria-label="Construction progress"><button className="lower-modal-backdrop" aria-label="Close construction progress" onClick={() => setProgress(null)} /><article className="lower-article-modal"><RoundButton label="Close construction progress" className="lower-modal-close" onClick={() => setProgress(null)}>×</RoundButton><h2 className="lower-display" dangerouslySetInnerHTML={{ __html: content.progress[progress].details.title }} />{content.progress[progress].details.media.map((media, index) => <img key={index} src={asset(media.original)} alt="Construction progress at Horizonte Village" />)}</article></div>}

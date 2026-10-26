@@ -15,7 +15,8 @@ export default function HeroSequence() {
       if (!element || !hero) return;
       const context = element.getContext("2d");
       if (!context) return;
-      let disposed = false, frame = 0, lastDrawn = -1, request = 0;
+      let disposed = false, frame = 0, lastDrawn = -1, request = 0, loaded = 0;
+      element.dataset.loaded = "0";
       const images: (HTMLImageElement | undefined)[] = new Array(FRAME_COUNT);
       const draw = () => {
         request = 0;
@@ -42,7 +43,7 @@ export default function HeroSequence() {
       const load = (index: number) => new Promise<void>(resolve => {
         if (disposed) { resolve(); return; }
         const image = new Image();
-        image.onload = () => { if (!disposed) { images[index] = image; queueDraw(); } resolve(); };
+        image.onload = () => { if (!disposed) { images[index] = image; loaded++; element.dataset.loaded = String(loaded); window.dispatchEvent(new CustomEvent("hero-frame-progress", { detail: loaded })); queueDraw(); } resolve(); };
         image.onerror = () => resolve();
         image.src = `/images/main/sequence/frame-${index.toString().padStart(5, "0")}.webp`;
       });
