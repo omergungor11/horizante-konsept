@@ -313,6 +313,8 @@ export default function Residences() {
   const mapTouch = useRef<{ x: number; offset: number } | null>(null);
   const mapOffset = useRef(0);
   const placeTrack = useRef<HTMLDivElement>(null);
+  const placeScrollTween = useRef<gsap.core.Tween | null>(null);
+  const placeScrollTarget = useRef<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const panoramaFrame = useRef<HTMLIFrameElement>(null);
@@ -391,6 +393,8 @@ export default function Residences() {
     });
   }, [activePlace]);
 
+  useEffect(() => () => { placeScrollTween.current?.kill(); }, []);
+
   useEffect(() => {
     if (!panoramaRef.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const media = gsap.matchMedia();
@@ -432,12 +436,32 @@ export default function Residences() {
     setCategory(value); setSlide(0);
     window.dispatchEvent(new CustomEvent("category-change", { detail: value }));
   };
+  const stopPlaceScroll = () => {
+    placeScrollTween.current?.kill();
+    placeScrollTween.current = null;
+    placeScrollTarget.current = null;
+    placeTrack.current?.style.removeProperty("scroll-snap-type");
+  };
   const selectPlace = (id: number, scroll = false) => {
     setActivePlace(id);
-    if (scroll && placeTrack.current) {
-      const card = placeTrack.current.querySelector<HTMLElement>(`[data-place="${id}"]`);
-      if (card) gsap.to(placeTrack.current, { scrollLeft: card.offsetLeft - parseFloat(getComputedStyle(placeTrack.current).paddingLeft), duration: 1.2, ease: "power2.inOut", overwrite: true });
-    }
+    const track = placeTrack.current;
+    if (!scroll || !track) return;
+    const card = track.querySelector<HTMLElement>(`[data-place="${id}"]`);
+    if (!card) return;
+    const padding = parseFloat(getComputedStyle(track).paddingLeft);
+    const target = Math.max(0, Math.min(track.scrollWidth - track.clientWidth,
+      track.scrollLeft + card.getBoundingClientRect().left - track.getBoundingClientRect().left - padding));
+    if (placeScrollTarget.current === target) return;
+    placeScrollTween.current?.kill();
+    // Native snap otherwise rounds every animation frame to a different card.
+    track.style.scrollSnapType = "none";
+    placeScrollTarget.current = target;
+    placeScrollTween.current = gsap.to(track, {
+      scrollLeft: target,
+      duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : .9,
+      ease: "power3.out",
+      onComplete: stopPlaceScroll,
+    });
   };
   const toggleAudio = async () => {
     const audio = audioRef.current;
@@ -519,11 +543,12 @@ export default function Residences() {
         <div ref={routeRef} className="res-map-routes" aria-hidden="true">{mapRoutes.map(route => <svg className={`res-map-route res-map-route-${route.id}`} key={route.id} viewBox={route.viewBox} fill="none"><defs><mask id={`res-route-mask-${route.id}`}><path d={route.d} stroke="white" strokeWidth="2" strokeDasharray="4 4" /></mask></defs><path className="res-route-line" data-id={route.id} d={route.d} pathLength="1" stroke="#304143" strokeWidth="2" strokeDasharray="1" strokeDashoffset="1" mask={`url(#res-route-mask-${route.id})`} /></svg>)}</div>
         <img src="/images/main/map.webp" alt="Map of the Costa del Sol surrounding Horizonte Village" loading="lazy" />
         <a className="res-map-home" href="/genplan" aria-label="Explore Horizonte Village masterplan"><img src="/logo_small.svg" alt="Horizonte Village" /></a>
-        {places.map(place => <button key={place.id} className={`res-map-pin ${activePlace === place.id ? "is-active" : ""}`} style={{ left: `${place.x}%`, top: `${place.y}%` }} aria-label={place.title} title={place.title} aria-pressed={activePlace === place.id} onMouseEnter={() => { if (window.matchMedia("(hover: hover)").matches) selectPlace(place.id, true); }} onMouseLeave={() => setActivePlace(null)} onClick={() => selectPlace(place.id, true)}><MapPin /></button>)}
+        {places.map(place => <button key={place.id} className={`res-map-pin ${activePlace === place.id ? "is-active" : ""}`} style={{ left: `${place.x}%`, top: `${place.y}%` }} aria-label={place.title} title={place.title} aria-pressed={activePlace === place.id} onMouseEnter={() => { if (window.matchMedia("(hover: hover)").matches) selectPlace(place.id, true); }} onFocus={() => selectPlace(place.id, true)} onClick={() => selectPlace(place.id, true)}><MapPin /></button>)}
       </div>
       <div className="res-location-heading"><div><h2>Prime location <i>between</i> Mijas, Benalmadena, <i>and</i> Fuengirola <i>on the</i> picturesque <i>coastline of</i> Spain</h2><a href="https://maps.google.com/?q=Horizonte+Village+Mijas" target="_blank" rel="noreferrer" className="res-map-link res-mono">See on map <span>↗</span></a></div><p className="res-mono">Mijas, Malaga, Spain</p></div>
       <div className="res-place-track" ref={placeTrack}
-        onPointerDown={event => { if (event.pointerType !== "mouse" || event.button !== 0) return; mapDrag.current = { x: event.clientX, scroll: event.currentTarget.scrollLeft, moved: false }; suppressCardClick.current = false; }}
+        onWheel={stopPlaceScroll}
+        onPointerDown={event => { stopPlaceScroll(); if (event.pointerType !== "mouse" || event.button !== 0) return; mapDrag.current = { x: event.clientX, scroll: event.currentTarget.scrollLeft, moved: false }; suppressCardClick.current = false; }}
         onPointerMove={event => {
           const drag = mapDrag.current;
           if (!drag) return;
@@ -534,8 +559,8 @@ export default function Residences() {
         onPointerCancel={() => { mapDrag.current = null; }}
         onPointerLeave={() => { if (!mapDrag.current?.moved) mapDrag.current = null; }}
         onClickCapture={event => { if (event.detail !== 0 && suppressCardClick.current) { event.preventDefault(); event.stopPropagation(); suppressCardClick.current = false; } }}>
-        {places.map(place => <button key={place.id} data-place={place.id} className={`res-place-card ${activePlace === place.id ? "is-active" : ""}`} onMouseEnter={() => { if (!mapDrag.current) selectPlace(place.id); }} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActivePlace(null); }} onFocus={() => selectPlace(place.id)} onBlur={() => setActivePlace(null)} onClick={() => selectPlace(place.id)} aria-pressed={activePlace === place.id}>
-          <img src={place.src} alt="" loading="lazy" draggable={false} />
+        {places.map(place => <button key={place.id} data-place={place.id} className={`res-place-card ${activePlace === place.id ? "is-active" : ""}`} onMouseEnter={() => { if (!mapDrag.current && window.matchMedia("(hover: hover)").matches) selectPlace(place.id); }} onFocus={() => selectPlace(place.id)} onClick={() => selectPlace(place.id)} aria-pressed={activePlace === place.id}>
+          <img src={place.src} alt="" loading={activePlace === place.id ? "eager" : "lazy"} draggable={false} />
           <span className="res-place-distance"><strong>{place.distance}</strong><span className="res-mono">{place.text}</span></span>
           <span className="res-place-title">{place.title}</span><span className="res-place-icon" aria-hidden="true"><MapPin /></span>
         </button>)}

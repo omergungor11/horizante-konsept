@@ -57,8 +57,7 @@ export default function Experience() {
      gsap.set('.hero-main-titles',{opacity:1});
      gsap.to('.hero-background',{yPercent:30,ease:'none',scrollTrigger:{trigger:hero.current,start:'bottom bottom',end:'bottom top',scrub:true}});
     });
-    const concept=new SplitText('.concept-title',{type:'lines',tag:'span'});splits.push(concept);
-    gsap.from(concept.lines,{yPercent:20,autoAlpha:0,duration:.8,stagger:.05,scrollTrigger:{trigger:'.concept-title',start:'top 90%',once:true}});
+    const concept=new SplitText('.concept-title',{type:'lines',tag:'span',autoSplit:true,onSplit:(split)=>gsap.from(split.lines,{yPercent:20,autoAlpha:0,duration:.8,stagger:.05,scrollTrigger:{trigger:'.concept-title',start:'top 90%',once:true}})});splits.push(concept);
    });
   });
   return()=>{disposed=true;ctx.revert();splits.forEach(split=>split.revert());window.removeEventListener('category-change',change)};
