@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -13,6 +13,13 @@ import data from '@/lib/site-data.json';
 import './hero.css';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
+
+// SplitText owns these descendants after mount. Keep parent state updates from
+// replacing the generated character spans through dangerouslySetInnerHTML.
+const HeroTitles=memo(function HeroTitles(){
+ return <div className="hero-main-titles">{data.page.hero.descriptions.map((html,index)=><div className={`h1 hero-main-title ${index===0?'hero-statement':'hero-meet'}`} key={html} dangerouslySetInnerHTML={{__html:html}}/>)}</div>;
+});
+
 export default function Experience() {
  const [entered,setEntered]=useState(false);
  const [category,setCategory]=useState('villas');
@@ -33,14 +40,15 @@ export default function Experience() {
    ctx.add(()=>{
     const mm=gsap.matchMedia();
     mm.add('(min-width:1024px) and (prefers-reduced-motion:no-preference)',()=>{
+     const desktopSplits:SplitText[]=[];
      const height=()=>window.innerHeight;
      const logo=hero.current?.querySelector<HTMLElement>('.hero-brand');
      if(logo)gsap.to(logo,{scale:152/1360,y:()=>-((logo?.offsetHeight||0)*152/1360)/2-(document.querySelector('header')?.getBoundingClientRect().height||0)*.3,ease:'none',scrollTrigger:{start:0,end:()=>height()*.5,scrub:true,invalidateOnRefresh:true,onLeave:()=>logo?.classList.add('hide'),onEnterBack:()=>logo?.classList.remove('hide')}});
-     const intro=new SplitText('.hero-introduction',{type:'lines',tag:'span'});splits.push(intro);
+     const intro=new SplitText('.hero-introduction',{type:'lines',tag:'span'});desktopSplits.push(intro);
      gsap.to(intro.lines,{yPercent:20,autoAlpha:0,duration:.8,stagger:-.15,scrollTrigger:{start:0,end:()=>height()*.5,scrub:true}});
      const titles=hero.current?.querySelectorAll<HTMLElement>('.hero-main-title');
      titles?.forEach((title,index)=>{
-      const split=new SplitText(title,{type:'words,chars',tag:'span',wordsClass:'hero-word',charsClass:'hero-char'});splits.push(split);
+      const split=new SplitText(title,{type:'words,chars',tag:'span',wordsClass:'hero-word',charsClass:'hero-char'});desktopSplits.push(split);
       gsap.set([...split.chars,...split.words],{display:'inline-block'});
       const entrance=gsap.timeline();
       split.words.forEach(word=>{
@@ -56,6 +64,7 @@ export default function Experience() {
      });
      gsap.set('.hero-main-titles',{opacity:1});
      gsap.to('.hero-background',{yPercent:30,ease:'none',scrollTrigger:{trigger:hero.current,start:'bottom bottom',end:'bottom top',scrub:true}});
+     return()=>{desktopSplits.forEach(split=>split.revert());logo?.classList.remove('hide');setShowLocation(false);};
     });
     const concept=new SplitText('.concept-title',{type:'lines',tag:'span',autoSplit:true,onSplit:(split)=>gsap.from(split.lines,{yPercent:20,autoAlpha:0,duration:.8,stagger:.05,scrollTrigger:{trigger:'.concept-title',start:'top 90%',once:true}})});splits.push(concept);
    });
@@ -68,7 +77,7 @@ export default function Experience() {
  <section className="hero-section" data-header-color="light" ref={hero} id="home">
   <div className="hero-sticky">
    <div className="hero-background"><HeroSequence/><div className="hero-shade"/><div className="hero-gradient-top"/><div className="hero-gradient-bottom"/><img className="hero-brand" src="/logo_big.svg" alt="Horizonte"/></div>
-   <div className="hero-main-titles">{data.page.hero.descriptions.map((html,index)=><div className={`h1 hero-main-title ${index===0?'hero-statement':'hero-meet'}`} key={html} dangerouslySetInnerHTML={{__html:html}}/>)}</div>
+   <HeroTitles/>
    <p className="h2 hero-introduction">{data.page.hero.title}</p>
    <div className="hero-selection-links"><a className={`hero-pin pin-villas ${category==='villas'?'is-active':''}`} href="/selection?category=villas"><WaveButton active={isMobile&&category==='villas'} className="hero-wave">Villas</WaveButton></a><a className={`hero-pin pin-residences ${category==='residences'?'is-active':''}`} href="/selection?category=residences"><WaveButton active={isMobile&&category==='residences'} className="hero-wave">Residences</WaveButton></a></div>
    {showLocation?<p className="hero-location"><span>Location</span>{data.page.hero.location}</p>:<p className="hero-scroll-label">Scroll down</p>}
